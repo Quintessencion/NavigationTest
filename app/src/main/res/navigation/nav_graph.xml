@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.simbirsoft.insurance.platform.navigationtest.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a">
+        <action
+            android:id="@+id/action_navigation_to_extra_fragment"
+            app:destination="@id/extra_data_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.simbirsoft.insurance.platform.navigationtest.BFragment"
+        android:label="BFragment"
+        tools:layout="@layout/fragment_b">
+        <action
+            android:id="@+id/action_navigation_to_extra_fragment"
+            app:destination="@id/extra_data_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.simbirsoft.insurance.platform.navigationtest.CFragment"
+        android:label="CFragment"
+        tools:layout="@layout/fragment_c">
+        <action
+            android:id="@+id/action_navigation_to_extra_fragment"
+            app:destination="@id/extra_data_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_settings"
+        android:name="com.simbirsoft.insurance.platform.navigationtest.DFragment"
+        android:label="DFragment"
+        tools:layout="@layout/fragment_d">
+        <action
+            android:id="@+id/action_navigation_to_extra_fragment"
+            app:destination="@id/extra_data_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/extra_data_fragment"
+        android:name="com.simbirsoft.insurance.platform.navigationtest.ExtraTextFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_extra_text">
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_pop"
+            app:popUpTo="@id/extra_data_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
